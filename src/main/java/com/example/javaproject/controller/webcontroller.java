@@ -1,5 +1,6 @@
 package com.example.javaproject.controller;
 
+import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +22,11 @@ public class webcontroller {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(){
         return "login";
+    }
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public String loginroute(){
+        return login();
     }
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signup(){
